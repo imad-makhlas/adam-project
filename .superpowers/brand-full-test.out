@@ -1,0 +1,37 @@
+
+ RUN  v4.1.0 C:/Imad Makhlas/projects/adamproject
+
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > presents separate women and men collections with Moroccan purchase reassurance 511ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > provides a duplicated hidden announcement sequence for seamless motion 99ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > presents the campaign hero with clear Moroccan shopping promises 105ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > adds a perfume to the bag and exposes checkout 594ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > opens a simple product view and sends the selected quantity to checkout 514ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > announces checkout errors and closes the modal with Escape 561ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > redirects the completed order without displaying a copy-message panel 818ms
+ ✓ src/features/catalog/product-schema.test.ts > productInputSchema > normalizes a valid product and exactly three notes 14ms
+ ✓ src/features/catalog/product-schema.test.ts > productInputSchema > rejects an invalid 'price' 1ms
+ ✓ src/features/catalog/product-schema.test.ts > productInputSchema > rejects an invalid 'price' 3ms
+ ✓ src/features/catalog/product-schema.test.ts > productInputSchema > rejects an invalid 'audience' 1ms
+ ✓ src/features/catalog/product-schema.test.ts > productInputSchema > rejects an invalid 'notes' 1ms
+ ✓ src/features/catalog/product-schema.test.ts > productInputSchema > rejects an invalid 'notes' 0ms
+ ✓ src/features/catalog/product-schema.test.ts > productInputSchema > rejects an invalid 'image' 1ms
+ ✓ src/features/catalog/product-schema.test.ts > productInputSchema > rejects unknown fields 1ms
+ ✓ src/features/catalog/product-schema.test.ts > productSchema > requires the stable product identifier 4ms
+ ✓ src/features/catalog/product-schema.test.ts > productSchema > accepts a secure remote image URL 1ms
+ ✓ src/features/checkout/whatsapp.test.ts > WhatsApp checkout > normalizes common Moroccan phone formats 4ms
+ ✓ src/features/checkout/whatsapp.test.ts > WhatsApp checkout > creates an encoded multi-product order with customer details and total 4ms
+ ✓ src/features/checkout/whatsapp.test.ts > WhatsApp checkout > creates a short direct enquiry for one perfume 1ms
+ ✓ src/features/checkout/checkout-schema.test.ts > checkout form validation > accepts a valid Moroccan WhatsApp customer 13ms
+ ✓ src/features/checkout/checkout-schema.test.ts > checkout form validation > rejects an invalid phone number and missing city 4ms
+ ✓ src/features/cart/cart.test.ts > shopping bag > combines repeated products instead of creating duplicate lines 6ms
+ ✓ src/features/cart/cart.test.ts > shopping bag > removes a line when its quantity reaches zero 1ms
+ ✓ src/features/cart/cart.test.ts > shopping bag > calculates totals from current catalogue prices 1ms
+ ✓ src/features/cart/cart.test.ts > shopping bag > drops malformed and unavailable entries restored from storage 1ms
+ ✓ src/features/cart/cart.test.ts > shopping bag > continues with an in-memory bag when browser storage is unavailable 3ms
+ ✓ src/features/catalog/catalog.test.ts > catalogue filtering > keeps unavailable products visible for the requested audience 6ms
+
+ Test Files  6 passed (6)
+      Tests  28 passed (28)
+   Start at  19:23:10
+   Duration  24.81s (transform 679ms, setup 2.49s, import 2.50s, tests 3.30s, environment 12.84s)
+

@@ -1,0 +1,16 @@
+
+ RUN  v4.1.0 C:/Imad Makhlas/projects/adamproject
+
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > presents separate women and men collections with Moroccan purchase reassurance 467ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > provides a duplicated hidden announcement sequence for seamless motion 67ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > presents the campaign hero with clear Moroccan shopping promises 68ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > adds a perfume to the bag and exposes checkout 386ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > opens a simple product view and sends the selected quantity to checkout 332ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > announces checkout errors and closes the modal with Escape 487ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > redirects the completed order without displaying a copy-message panel 723ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  19:33:33
+   Duration  8.47s (transform 562ms, setup 487ms, import 1.78s, tests 2.54s, environment 2.00s)
+

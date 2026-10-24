@@ -1,0 +1,170 @@
+
+ RUN  v4.1.0 C:/Imad Makhlas/projects/adamproject
+
+ × src/App.test.tsx > Parfumerie Bourgois storefront > presents separate women and men collections with Moroccan purchase reassurance 360ms
+   → Unable to find an element with the text: Parfumerie Bourgois · Fès. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"site-shell"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33maria-label[39m=[32m"Annonces"[39m
+        [33mclass[39m=[32m"announcement"[39m
+        [33mrole[39m=[32m"region"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"announcement-track"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"announcement-group"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"announcement-item"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-sparkles"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20 3v4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M22 5h-4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M4 17v2"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M5 18H3"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mNouveautés & éditions exclusives[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"announcement-separator"[39m
+            [36m>[39m
+              [0m◆[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"announcement-item"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-heart"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mParfums pour elle & pour lui[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"announcement-separator"[39m
+            [36m>[39m
+              [0m◆[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"announcement-item"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-truck"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M15 18H9"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"[39m
+                [36m/>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"17"[39m
+                  [33mcy[39m=[32m"18"[39m
+                  [33mr[39m=[32m"2"[39m
+                [36m/>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"7"[39m
+                  [33mcy[39m=[32m"18"[39m
+                  [33mr[39m=[32m"2"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mLivraison partout au Maroc[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"announcement-separator"[39m
+            [36m>[39m
+              [0m◆[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"announcement-group"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"announcement-item"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-sparkles"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14....
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > provides a duplicated hidden announcement sequence for seamless motion 80ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > presents the campaign hero with clear Moroccan shopping promises 108ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > adds a perfume to the bag and exposes checkout 407ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > opens a simple product view and sends the selected quantity to checkout 407ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > announces checkout errors and closes the modal with Escape 517ms
+ ✓ src/App.test.tsx > Parfumerie Bourgois storefront > redirects the completed order without displaying a copy-message panel 671ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  19:32:32
+   Duration  8.96s (transform 622ms, setup 648ms, import 2.13s, tests 2.56s, environment 2.26s)
+

@@ -185,6 +185,26 @@ describe('Parfumerie Bourgois storefront', () => {
     expect(screen.getByRole('navigation', { name: 'Navigation principale' })).toHaveClass('is-open')
   })
 
+  it('closes the mobile menu when the shopper clicks outside the header', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('button', { name: 'Ouvrir le menu' }))
+    await user.click(screen.getByRole('main'))
+
+    expect(screen.getByRole('button', { name: 'Ouvrir le menu' })).toHaveAttribute('aria-expanded', 'false')
+  })
+
+  it('closes the mobile menu with Escape', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('button', { name: 'Ouvrir le menu' }))
+    await user.keyboard('{Escape}')
+
+    expect(screen.getByRole('button', { name: 'Ouvrir le menu' })).toHaveAttribute('aria-expanded', 'false')
+  })
+
   it('announces checkout errors and closes the modal with Escape', async () => {
     const user = userEvent.setup()
     render(<App />)

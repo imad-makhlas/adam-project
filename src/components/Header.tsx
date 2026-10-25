@@ -1,5 +1,5 @@
 import { Heart, ShoppingBag, Sparkles, Truck } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useCart } from '../features/cart/cart-context'
 import { BrandLogo } from './BrandLogo'
 
@@ -19,6 +19,25 @@ function AnnouncementGroup({ hidden = false }: { hidden?: boolean }) {
 export function Header({ onOpenBag }: { onOpenBag: () => void }) {
   const { itemCount } = useCart()
   const [menuOpen, setMenuOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) setMenuOpen(false)
+    }
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+
+    document.addEventListener('pointerdown', closeOnOutsideClick)
+    document.addEventListener('keydown', closeOnEscape)
+    return () => {
+      document.removeEventListener('pointerdown', closeOnOutsideClick)
+      document.removeEventListener('keydown', closeOnEscape)
+    }
+  }, [menuOpen])
 
   return (
     <>
@@ -28,7 +47,7 @@ export function Header({ onOpenBag }: { onOpenBag: () => void }) {
           <AnnouncementGroup hidden />
         </div>
       </div>
-      <header className="site-header">
+      <header ref={headerRef} className="site-header">
         <button
           className={menuOpen ? 'mobile-menu-button is-open' : 'mobile-menu-button'}
           type="button"
@@ -59,6 +78,7 @@ export function Header({ onOpenBag }: { onOpenBag: () => void }) {
           <span className="bag-count">{itemCount}</span>
         </button>
       </header>
+      {menuOpen && <div className="mobile-menu-scrim" aria-hidden="true" />}
     </>
   )
 }

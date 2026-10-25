@@ -1,0 +1,76 @@
+<style>
+  .store-intro { max-width: 780px; margin-bottom: 26px; }
+  .store-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px; }
+  .store-option { position:relative;padding:14px;border:1px solid #b58a3a;background:#f7edd8;cursor:pointer;transition:.25s ease; }
+  .store-option:hover { transform:translateY(-4px);box-shadow:0 20px 44px rgba(71,45,7,.15); }
+  .store-option.selected { outline:3px solid #b58a3a;outline-offset:4px; }
+  .choice-tag { margin-bottom:12px;color:#8d6726;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase; }
+  .store-view { position:relative;height:330px;overflow:hidden;background:#070604;perspective:700px; }
+  .ceiling { position:absolute;left:8%;right:8%;top:-42%;height:70%;background:linear-gradient(#1d160c,#060504);transform:rotateX(-63deg);border-bottom:1px solid #8d6726; }
+  .floor { position:absolute;left:-18%;right:-18%;bottom:-55%;height:105%;background:repeating-linear-gradient(90deg,#17100a 0 44px,#24170a 45px 47px);transform:rotateX(67deg);border-top:1px solid #8d6726; }
+  .back-wall { position:absolute;left:24%;right:24%;top:17%;bottom:21%;border:1px solid #6c4d1e;background:radial-gradient(circle at center,#35250f,#0a0805 72%); }
+  .logo-mini { position:absolute;left:50%;top:25%;transform:translateX(-50%);color:#d6ae57;font:500 15px Georgia,serif;letter-spacing:.13em; }
+  .shelf { position:absolute;top:15%;bottom:15%;width:20%;border:1px solid #75511c;background:linear-gradient(90deg,#0d0905,#27180a,#0c0905);box-shadow:inset 0 0 20px #000; }
+  .shelf.left { left:1%;transform:rotateY(17deg);transform-origin:left; }
+  .shelf.right { right:1%;transform:rotateY(-17deg);transform-origin:right; }
+  .shelf::before,.shelf::after { content:'♢  ♢  ♢';position:absolute;left:8%;right:8%;height:32%;padding-top:16px;border-bottom:1px solid #8d6726;color:#c89a44;text-align:center;font-size:22px;letter-spacing:5px; }
+  .shelf::after { top:45%; }
+  .hotspot { position:absolute;z-index:4;width:32px;height:32px;display:grid;place-items:center;border:1px solid #f3d48e;border-radius:50%;background:#b58a3a;color:#111;font-size:11px;box-shadow:0 0 0 8px rgba(181,138,58,.15);animation:pulse 1.8s ease-in-out infinite; }
+  .hotspot.one { left:17%;top:38%; }.hotspot.two { right:17%;top:52%; }.hotspot.three { left:48%;top:48%; }
+  @keyframes pulse { 50% { box-shadow:0 0 0 15px rgba(181,138,58,0); } }
+  .controls { position:absolute;z-index:5;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:7px; }
+  .controls span { min-width:32px;padding:7px;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.58);color:white;text-align:center;font-size:9px; }
+  .path { position:absolute;z-index:3;left:50%;bottom:22%;width:2px;height:39%;background:linear-gradient(transparent,#d0a650);transform:perspective(100px) rotateX(20deg); }
+  .path::after { content:'➜';position:absolute;left:-11px;bottom:-18px;color:#d0a650;font-size:22px;transform:rotate(90deg); }
+  .orbit { position:absolute;z-index:5;left:18px;right:18px;bottom:14px;display:flex;justify-content:space-between;align-items:center;color:white;font-size:9px;letter-spacing:.08em;text-transform:uppercase; }
+  .orbit b { width:38px;height:38px;display:grid;place-items:center;border:1px solid #c9a65a;border-radius:50%;background:rgba(0,0,0,.55);color:#d6ae57;font-size:18px; }
+  .recommended { position:absolute;z-index:9;top:12px;right:12px;padding:6px 8px;background:#111;color:white;font-size:8px;letter-spacing:.1em;text-transform:uppercase; }
+  .store-option h3 { margin:17px 0 7px;color:#17130c;font:600 25px/1.05 Georgia,serif; }
+  .store-option p { margin:0;color:#675a44;font-size:12px;line-height:1.6; }
+  .store-summary { margin-top:22px;padding:15px 17px;border-left:3px solid #b58a3a;background:#fffaf0;color:#574a35;font-size:12px;line-height:1.6; }
+  @media(max-width:980px){.store-grid{grid-template-columns:1fr}.store-view{height:360px}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="store-intro">
+  <div class="label">Expérience 3D · Parfumerie Bourgois</div>
+  <h2>Comment le visiteur explore-t-il le magasin&nbsp;?</h2>
+  <p class="subtitle">Cliquez sur l’expérience qui correspond le mieux à votre idée.</p>
+</div>
+
+<div class="store-grid">
+  <article class="store-option" data-choice="navigation-libre" onclick="toggleSelect(this)">
+    <div class="choice-tag">A · Navigation libre</div>
+    <div class="store-view">
+      <div class="ceiling"></div><div class="floor"></div><div class="back-wall"></div><div class="logo-mini">BOURGOIS</div>
+      <div class="shelf left"></div><div class="shelf right"></div><i class="hotspot one">+</i><i class="hotspot two">+</i>
+      <div class="controls"><span>W</span><span>A</span><span>S</span><span>D</span></div>
+    </div>
+    <h3>Comme un jeu</h3>
+    <p>Le visiteur marche librement avec clavier, souris ou joystick tactile. Très immersif, mais plus lourd et moins naturel pour acheter rapidement.</p>
+  </article>
+
+  <article class="store-option" data-choice="visite-guidee" onclick="toggleSelect(this)">
+    <div class="choice-tag">B · Visite guidée</div>
+    <div class="store-view">
+      <div class="ceiling"></div><div class="floor"></div><div class="back-wall"></div><div class="logo-mini">BOURGOIS</div>
+      <div class="shelf left"></div><div class="shelf right"></div><div class="path"></div><i class="hotspot three">1</i>
+    </div>
+    <h3>Parcours cinématique</h3>
+    <p>La caméra avance automatiquement d’un espace à l’autre. Beau et simple, mais le visiteur contrôle moins son exploration.</p>
+  </article>
+
+  <article class="store-option" data-choice="exploration-hybride" onclick="toggleSelect(this)">
+    <span class="recommended">Recommandé</span>
+    <div class="choice-tag">C · Exploration hybride</div>
+    <div class="store-view">
+      <div class="ceiling"></div><div class="floor"></div><div class="back-wall"></div><div class="logo-mini">BOURGOIS</div>
+      <div class="shelf left"></div><div class="shelf right"></div><i class="hotspot one">+</i><i class="hotspot two">+</i><i class="hotspot three">+</i>
+      <div class="orbit"><b>‹</b><span>Glisser pour regarder · cliquer pour avancer</span><b>›</b></div>
+    </div>
+    <h3>Libre, mais maîtrisée</h3>
+    <p>Le visiteur regarde autour de lui, puis clique sur un rayon ou un parfum pour s’en approcher. Immersif, fluide et adapté au mobile.</p>
+  </article>
+</div>
+
+<div class="store-summary"><strong>Recommandation :</strong> l’option C donne réellement l’impression d’être dans une parfumerie, sans imposer les commandes compliquées d’un jeu. Sur les téléphones modestes, une version allégée conserve la même navigation.</div>

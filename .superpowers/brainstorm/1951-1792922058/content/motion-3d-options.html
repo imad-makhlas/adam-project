@@ -1,0 +1,95 @@
+<style>
+  .motion-intro { max-width: 760px; margin-bottom: 28px; }
+  .motion-intro h2 { margin-bottom: 8px; }
+  .motion-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+  .motion-card { position: relative; min-height: 520px; padding: 16px; overflow: hidden; border: 1px solid #c9a65a; background: #f7edd8; cursor: pointer; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+  .motion-card:hover { border-color: #8d6726; box-shadow: 0 28px 56px rgba(60, 39, 8, .16); }
+  .motion-card.selected { outline: 3px solid #b58a3a; outline-offset: 4px; }
+  .motion-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; color: #8d6726; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  .motion-tag::before { content: ''; width: 22px; height: 1px; background: currentColor; }
+  .motion-stage { height: 320px; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(141,103,38,.25); background: linear-gradient(145deg, #fffdf7, #efe0c2); perspective: 900px; }
+  .motion-card h3 { margin: 18px 0 7px; color: #17130c; font: 600 27px/1.05 Georgia, serif; }
+  .motion-card p { margin: 0; color: #675a44; font-size: 13px; line-height: 1.6; }
+  .recommended { position: absolute; z-index: 5; top: 14px; right: 14px; padding: 7px 9px; background: #111; color: #fff; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+
+  .tilt-product { position: relative; width: 72%; height: 80%; transform-style: preserve-3d; transition: transform .55s cubic-bezier(.2,.8,.2,1); }
+  .motion-card:hover .tilt-product { transform: rotateX(7deg) rotateY(-12deg) translateY(-9px); }
+  .tilt-product::before { content: ''; position: absolute; inset: 11% 7% 4%; border: 1px solid rgba(181,138,58,.45); background: rgba(255,255,255,.5); transform: translateZ(-34px); }
+  .tilt-product img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 17px rgba(56,37,7,.22)); transform: translateZ(45px); transition: transform .55s cubic-bezier(.2,.8,.2,1); }
+  .motion-card:hover .tilt-product img { transform: translateZ(72px) scale(1.025); }
+  .tilt-product span { position: absolute; left: 12%; right: 12%; bottom: 5%; height: 24px; border-radius: 50%; background: rgba(92,57,8,.18); filter: blur(12px); transform: translateZ(-12px) rotateX(78deg); }
+
+  .parallax-scene { position: relative; width: 100%; height: 100%; overflow: hidden; background: #090806; transform-style: preserve-3d; }
+  .parallax-scene::before { content: ''; position: absolute; inset: -12%; background: radial-gradient(circle at 70% 45%, rgba(181,138,58,.38), transparent 31%), linear-gradient(125deg, #050505, #171005 70%, #050505); animation: ambient-shift 6s ease-in-out infinite alternate; }
+  .parallax-copy { position: absolute; z-index: 3; left: 22px; top: 28px; width: 49%; color: white; transform: translateZ(60px); transition: transform .55s ease; }
+  .parallax-copy strong { display: block; font: 500 27px/.95 Georgia, serif; }
+  .parallax-copy small { display: block; margin-top: 12px; color: #d9b968; font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
+  .parallax-bottle { position: absolute; z-index: 2; right: -2%; bottom: -8%; width: 67%; height: 96%; object-fit: contain; filter: drop-shadow(-18px 24px 20px rgba(0,0,0,.5)); transform: translateZ(34px) rotateY(-5deg); transition: transform .65s cubic-bezier(.2,.8,.2,1); }
+  .motion-card:hover .parallax-bottle { transform: translateZ(75px) translate(-15px,-8px) rotateY(7deg); }
+  .motion-card:hover .parallax-copy { transform: translateZ(90px) translateX(5px); }
+  @keyframes ambient-shift { to { transform: translate3d(-2%,1%,0) scale(1.05); } }
+
+  .modal-scene { position: relative; width: 84%; height: 76%; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.2,.8,.2,1); }
+  .motion-card:hover .modal-scene { transform: rotateX(5deg) rotateY(9deg) scale(1.025); }
+  .modal-shadow { position: absolute; inset: 12% -5% -7% 7%; background: rgba(57,36,5,.2); filter: blur(22px); transform: translateZ(-80px); }
+  .modal-shell { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr .86fr; border: 1px solid #b58a3a; background: #f7edd8; transform: translateZ(25px); }
+  .modal-shell img { width: 100%; height: 100%; object-fit: cover; background: #fffaf0; }
+  .modal-copy { padding: 27px 18px; transform: translateZ(25px); }
+  .modal-copy small { color: #8d6726; font-size: 7px; letter-spacing: .12em; text-transform: uppercase; }
+  .modal-copy strong { display: block; margin: 9px 0 24px; font: 500 25px/.9 Georgia, serif; }
+  .modal-copy button { width: 100%; min-height: 38px; border: 1px solid #8d6726; background: #b58a3a; color: #111; font-size: 8px; text-transform: uppercase; }
+
+  .motion-note { margin-top: 24px; padding: 14px 16px; border-left: 3px solid #b58a3a; background: #fffaf0; color: #574a35; font-size: 12px; }
+  @media (max-width: 980px) { .motion-grid { grid-template-columns: 1fr; } .motion-card { min-height: 500px; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="motion-intro">
+  <div class="label">Parfumerie Bourgois · Direction artistique</div>
+  <h2>Quelle profondeur 3D vous paraît la plus élégante&nbsp;?</h2>
+  <p class="subtitle">Passez la souris sur chaque proposition, puis cliquez sur celle que vous préférez.</p>
+</div>
+
+<div class="motion-grid">
+  <article class="motion-card" data-choice="relief-produit" onclick="toggleSelect(this)">
+    <span class="recommended">Recommandé</span>
+    <div class="motion-tag">A · Relief produit</div>
+    <div class="motion-stage">
+      <div class="tilt-product">
+        <span></span>
+        <img src="http://127.0.0.1:4180/assets/parfum-femme.png" alt="Flacon Âme Blanche">
+      </div>
+    </div>
+    <h3>Relief produit premium</h3>
+    <p>La carte s’incline légèrement, le flacon avance et son ombre réagit. Moderne, rapide et luxueux sans distraire l’achat.</p>
+  </article>
+
+  <article class="motion-card" data-choice="parallaxe-cinematique" onclick="toggleSelect(this)">
+    <div class="motion-tag">B · Parallaxe</div>
+    <div class="motion-stage">
+      <div class="parallax-scene">
+        <div class="parallax-copy"><strong>Révélez votre présence.</strong><small>Collection femme · Fès</small></div>
+        <img class="parallax-bottle" src="http://127.0.0.1:4180/assets/parfum-femme.png" alt="Flacon en parallaxe">
+      </div>
+    </div>
+    <h3>Hero cinématique</h3>
+    <p>Le fond, le texte et le flacon bougent à des vitesses différentes. Plus immersif, surtout sur ordinateur.</p>
+  </article>
+
+  <article class="motion-card" data-choice="ouverture-profonde" onclick="toggleSelect(this)">
+    <div class="motion-tag">C · Fiche produit</div>
+    <div class="motion-stage">
+      <div class="modal-scene">
+        <div class="modal-shadow"></div>
+        <div class="modal-shell">
+          <img src="http://127.0.0.1:4180/assets/parfum-femme.png" alt="Flacon dans la fiche produit">
+          <div class="modal-copy"><small>Parfum femme</small><strong>Âme<br>Blanche</strong><button type="button">Ajouter au panier</button></div>
+        </div>
+      </div>
+    </div>
+    <h3>Ouverture en profondeur</h3>
+    <p>La fiche produit entre depuis l’arrière-plan avec une légère perspective. Très premium, mais à réserver aux ouvertures.</p>
+  </article>
+</div>
+
+<div class="motion-note"><strong>Ma recommandation :</strong> combiner A sur les cartes et C lors de l’ouverture, puis garder B extrêmement subtil dans le hero.</div>

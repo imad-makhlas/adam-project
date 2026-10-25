@@ -9,7 +9,7 @@ export function CollectionSection({ audience, onOpenProduct }: { audience: Audie
 
   return (
     <section className="collection" id={audience} aria-labelledby={`${audience}-title`}>
-      <div className="section-heading">
+      <div className="section-heading" data-reveal="heading">
         <p className="eyebrow">Collection {label}</p>
         <h2 id={`${audience}-title`}>Parfums {label}</h2>
         <p>{audience === 'femme' ? 'Des compositions lumineuses, florales et enveloppantes.' : 'Des sillages boisés, minéraux et affirmés.'}</p>

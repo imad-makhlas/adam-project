@@ -1,4 +1,4 @@
-import { Heart, Menu, ShoppingBag, Sparkles, Truck, X } from 'lucide-react'
+import { Heart, ShoppingBag, Sparkles, Truck } from 'lucide-react'
 import { useState } from 'react'
 import { useCart } from '../features/cart/cart-context'
 import { BrandLogo } from './BrandLogo'
@@ -30,20 +30,23 @@ export function Header({ onOpenBag }: { onOpenBag: () => void }) {
       </div>
       <header className="site-header">
         <button
-          className="mobile-menu-button"
+          className={menuOpen ? 'mobile-menu-button is-open' : 'mobile-menu-button'}
           type="button"
           aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-expanded={menuOpen}
+          aria-controls="navigation-principale"
           onClick={() => setMenuOpen((open) => !open)}
         >
-          {menuOpen ? <X size={19} /> : <Menu size={19} />}
+          <span className="menu-line" />
+          <span className="menu-line" />
         </button>
-        <a className="wordmark" href="#top" aria-label="Parfumerie Bourgois, accueil">
+        <a className="wordmark" href="/" aria-label="Parfumerie Bourgois, accueil">
           <BrandLogo />
         </a>
-        <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'} aria-label="Navigation principale">
-          <a href="#femme" onClick={() => setMenuOpen(false)}>Femme</a>
-          <a href="#homme" onClick={() => setMenuOpen(false)}>Homme</a>
-          <a href="#livraison" onClick={() => setMenuOpen(false)}>Livraison</a>
+        <nav id="navigation-principale" className={menuOpen ? 'main-nav is-open' : 'main-nav'} aria-label="Navigation principale">
+          <a href="/#femme" onClick={() => setMenuOpen(false)}>Femme</a>
+          <a href="/#homme" onClick={() => setMenuOpen(false)}>Homme</a>
+          <a href="/#livraison" onClick={() => setMenuOpen(false)}>Livraison</a>
         </nav>
         <button
           className="bag-button"
